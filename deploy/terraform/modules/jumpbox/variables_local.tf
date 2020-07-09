@@ -47,8 +47,8 @@ locals {
   ]
   rti = length(local.rti_updated) > 0 ? local.rti_updated : [
     {
-      "name"                 = "rti",
-      "destroy_after_deploy" = "true",
+      "name"                 = "rtixxx",
+      "destroy_after_deploy" = "false",
       "size"                 = "Standard_D2s_v3",
       "disk_type"            = "StandardSSD_LRS",
       "os" = {
@@ -58,7 +58,7 @@ locals {
       },
       "authentication" = {
         "type"     = "key",
-        "username" = "azureadm"
+        "username" = "bdelangh"
       },
       "components" = [
         "ansible"
