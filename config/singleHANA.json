@@ -1,6 +1,6 @@
 {
   "infrastructure": {
-    "region": "westus",
+    "region": "northeurope",
     "resource_group": {
       "is_existing": "false",
       "arm_id":"",
@@ -55,10 +55,10 @@
     }
   },
   "jumpboxes": {
-    "windows": [],
+    "windows":[],
     "linux": [
       {
-        "name": "rti",
+        "name": "rtijump",
         "destroy_after_deploy": "false",
         "size": "Standard_D2s_v3",
         "disk_type": "StandardSSD_LRS",
@@ -150,9 +150,7 @@
       "account_kind": "FileStorage",
       "file_share_name": "bits",
       "container_access_type": "private",
-      "storage_account_name": "sapbitsforpipeline",
-      "storage_access_key": "var-sa-access-key",
-      "arm_id": "var-sa-arm-id"
+      "storage_account_name": "sapbitsforpipeline"
     },
     "downloader": {
       "credentials": {
@@ -195,8 +193,8 @@
     }
   },
   "sshkey": {
-    "path_to_public_key": "~/.ssh/id_rsa.pub",
-    "path_to_private_key": "~/.ssh/id_rsa"
+    "path_to_public_key": "../tmp/sshkey.pub",
+    "path_to_private_key": "../tmp/sshkey"
   },
   "options": {
     "enable_secure_transfer": true,
