@@ -47,7 +47,7 @@ locals {
   ]
   rti = length(local.rti_updated) > 0 ? local.rti_updated : [
     {
-      "name"                 = "rtixxx",
+      "name"                 = "rti",
       "destroy_after_deploy" = "false",
       "size"                 = "Standard_D2s_v3",
       "disk_type"            = "StandardSSD_LRS",
