@@ -143,7 +143,8 @@ resource "null_resource" "prepare-rti" {
       # Install pywinrm
       "sudo -H pip3 install \"pywinrm>=0.3.0\"",
       # Clones project repository
-      "git clone https://github.com/Azure/sap-hana.git"
+      #"git clone https://github.com/Azure/sap-hana.git"
+      "git clone https://github.com/bdelangh/tf-demo.git"
     ]
   }
 }

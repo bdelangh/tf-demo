@@ -1,6 +1,6 @@
 {
   "infrastructure": {
-    "region": "northeurope",
+    "region": "westeurope",
     "resource_group": {
       "is_existing": "false",
       "arm_id":"",
@@ -49,6 +49,15 @@
           "nsg": {
             "is_existing": "false",
             "name": "nsg-db"
+          }
+        },
+        "subnet_app": {
+          "is_existing": "false",
+          "name": "subnet-app",
+          "prefix": "10.97.3.0/24",
+          "nsg": {
+            "is_existing": "false",
+            "name": "nsg-app"
           }
         }
       }
@@ -125,7 +134,7 @@
   ],
   "application": {
     "sid": "HN1",
-    "enable_deployment": false,
+    "enable_deployment": true,
     "scs_instance_number": "01",
     "ers_instance_number": "02",
     "scs_high_availability": false,
@@ -145,52 +154,13 @@
   "software": {
     "storage_account_sapbits": {
       "is_existing": true,
-      "account_tier": "Premium",
-      "account_replication_type": "LRS",
-      "account_kind": "FileStorage",
+      "blob_container_name": null,
       "file_share_name": "bits",
-      "container_access_type": "private",
-      "storage_account_name": "sapbits99c090a9"
+      "name": "bdlsapmedia",
+      "arm_id": "/subscriptions/37d02782-ca89-46c0-abac-ef2c0ae81726/resourceGroups/SAPCloudWorkshop/providers/Microsoft.Storage/storageAccounts/bdlsapmedia",
+      "storage_access_key": "NEHT5eQuziA0h/3BlkAKuQQvQ0JIxjYBTf0clftmeE4LM/Q1260u2QvSHah4RVu8t/H3DiFNTehVBZSdJkdsWw=="
     },
-    "downloader": {
-      "credentials": {
-        "sap_user": "S0021935912",
-        "sap_password": "qv73jf6Gior5tWZPqIQf"
-      },
-      "scenarios": [
-        {
-          "scenario_type": "DB",
-          "product_name": "HANA",
-          "product_version": "2.0",
-          "os_type": "LINUX_X64",
-          "os_version": "SLES12.3",
-          "components": [
-            "PLATFORM"
-          ]
-        },
-        {
-          "scenario_type": "RTI",
-          "product_name": "RTI",
-          "os_type": "LINUX_X64"
-        },
-        {
-          "scenario_type": "BASTION",
-          "os_type": "NT_X64"
-        },
-        {
-          "scenario_type": "BASTION",
-          "os_type": "LINUX_X64"
-        }
-      ],
-      "debug": {
-        "enabled": false,
-        "cert": "charles.pem",
-        "proxies": {
-          "http": "http://127.0.0.1:8888",
-          "https": "https://127.0.0.1:8888"
-        }
-      }
-    }
+    "downloader": {}
   },
   "sshkey": {
     "path_to_public_key": "../tmp/sshkey.pub",
