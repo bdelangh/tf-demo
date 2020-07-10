@@ -9,7 +9,7 @@
         file: "{{ inventory_dir }}/output.json"
         name: output
 
-    - name: Create dictionary with HANA database inforamtion from output.JSON
+    - name: Create dictionary with HANA database information from output.JSON
       set_fact:
         hana_database: "{{ item }}"
       loop: "{{ output.databases|flatten(levels=1) }}"
