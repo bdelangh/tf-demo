@@ -157,7 +157,7 @@
       "blob_container_name": null,
       "file_share_name": "bits",
       "name": "bdlsapmedia",
-      "arm_id": "/subscriptions/37d02782-ca89-46c0-abac-ef2c0ae81726/resourceGroups/SAPCloudWorkshop/providers/Microsoft.Storage/storageAccounts//bdlsapmedia",
+      "arm_id": "/subscriptions/37d02782-ca89-46c0-abac-ef2c0ae81726/resourceGroups/SAPCloudWorkshop/providers/Microsoft.Storage/storageAccounts/bdlsapmedia",
       "storage_access_key": "NEHT5eQuziA0h/3BlkAKuQQvQ0JIxjYBTf0clftmeE4LM/Q1260u2QvSHah4RVu8t/H3DiFNTehVBZSdJkdsWw=="
     }
   },
