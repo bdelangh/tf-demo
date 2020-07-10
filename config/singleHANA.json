@@ -50,6 +50,15 @@
             "is_existing": "false",
             "name": "nsg-db"
           }
+        },
+        "subnet_app": {
+          "is_existing": "false",
+          "name": "subnet-app",
+          "prefix": "10.97.3.0/24",
+          "nsg": {
+            "is_existing": "false",
+            "name": "nsg-app"
+          }
         }
       }
     }
@@ -125,7 +134,7 @@
   ],
   "application": {
     "sid": "HN1",
-    "enable_deployment": false,
+    "enable_deployment": true,
     "scs_instance_number": "01",
     "ers_instance_number": "02",
     "scs_high_availability": false,
