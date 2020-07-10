@@ -12,7 +12,7 @@
 !/**/terraform-units/**/*.tfvars
 
 # ignore key files
-# **/tmp
+**/tmp
 
 # ignore ansible retry files
 *.retry
