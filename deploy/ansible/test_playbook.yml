@@ -11,14 +11,16 @@
         file: "{{ inventory_dir }}/output.json"
         name: output
 
-    - name: Create dictionary with HANA database inforamtion from output.JSON
+    - name: Create dictionary with HANA database information from output.JSON
       set_fact:
         hana_database: "{{ item }}"
       loop: "{{ output.databases|flatten(levels=1) }}"
       when: item.platform == 'HANA'
       always:
-        debug:
-          msg:"OutputDatabeses= {{ output.databases|flatten(levels=1) }}"
+  post_tasks:
+    - debug: 
+        msg: "Task Completed ...
+              HANADATABASE = {{hana_database}} "
 
 # Inventory validation for HANA VMs
 - hosts: hanadbnodes
