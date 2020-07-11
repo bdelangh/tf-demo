@@ -6,6 +6,10 @@
     hanadbnodes_dict: "{{ hanadbnodes_dict | combine({item.ip_admin_nic : item.dbname}) }}"
   loop: "{{ hana_database.nodes }}"
 
+- name: Debug Message for hanadbnodes_dict
+  debug:
+    msg: "hanandbnodes_dict = {{ hanadbnotes_dict }}"
+
 # SUSE bug 1167134
 - name: Ensure DHCLIENT_SET_HOSTNAME is set to no for SLES
   when:
