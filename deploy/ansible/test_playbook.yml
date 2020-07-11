@@ -4,6 +4,8 @@
   become: true
   become_user: root
   pre_tasks:
+    - debug :
+        msg: "Started Deplopyment"
     - name: Include output JSON
       include_vars:
         file: "{{ inventory_dir }}/output.json"
@@ -24,8 +26,3 @@
       when:
         - hana_database.size != "LargeInstance"
 
-- debug :
-    msg: InventoryDir {{ inventory_dir }}
-
-- debug :
-    msg: InventoryDir {{ inventory_hostname }}
