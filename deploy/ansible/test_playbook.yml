@@ -16,7 +16,6 @@
         hana_database: "{{ item }}"
       loop: "{{ output.databases|flatten(levels=1) }}"
       when: item.platform == 'HANA'
-      always:
   post_tasks:
     - debug: 
         msg: "Task Completed ...
