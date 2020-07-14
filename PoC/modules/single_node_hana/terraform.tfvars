@@ -91,6 +91,7 @@ allow_ips = ["0.0.0.0/0"]
 # Vnet Address space
 vnet_address_space = "10.95.0.0/21"
 
+
 # HDB Subnet Address space
 hdb_subnet_address_space = "10.95.0.0/24"
 
