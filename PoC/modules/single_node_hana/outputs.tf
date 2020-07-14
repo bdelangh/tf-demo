@@ -2,8 +2,13 @@ output "hdb_vm_user" {
   value = var.vm_user
 }
 
-output "hdb_ip" {
+output "hdb_fqdn" {
   value = module.create_hdb.fqdn
+}
+
+output "hdb_ip" {
+  description = "Public IP Address"
+  value       = module.create_hdb.hdb_ip
 }
 
 output "windows_bastion_ip" {

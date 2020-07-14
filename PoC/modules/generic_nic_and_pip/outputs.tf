@@ -8,6 +8,11 @@ output "pip_name" {
   value       = azurerm_public_ip.pip.name
 }
 
+output "pip_ip" {
+  description = "Public IP Address"
+  value       = azurerm_public_ip.pip.ip_address
+}
+
 output "nic_id" {
   description = "The id of the network interface card will be needed to attach it to the VM."
   value       = azurerm_network_interface.nic.id

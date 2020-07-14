@@ -6,3 +6,8 @@ output "fqdn" {
   value = module.nic_and_pip_setup.fqdn
 }
 
+output "hdb_ip" {
+  description = "Public IP Address"
+  value       = module.nic_and_pip_setup.pip_ip
+}
+
