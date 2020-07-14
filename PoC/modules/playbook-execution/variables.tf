@@ -59,7 +59,7 @@ variable "pw_db_system" {
 }
 
 variable "pw_hacluster" {
-  type        = "string"
+  type        = string
   description = "Password for the HA cluster nodes"
   default     = "" #single node case doesn't need one
 }
@@ -119,12 +119,12 @@ variable "url_portal_services" {
 }
 
 variable "url_sap_hdbserver" {
-  type        = "string"
+  type        = string
   description = "The URL that points to the HDB server 122.17 bits"
 }
 
 variable "url_sap_sapcar" {
-  type        = "string"
+  type        = string
   description = "The URL that points to the SAPCAR bits"
 }
 
