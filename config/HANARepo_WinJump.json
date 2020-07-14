@@ -81,8 +81,7 @@
               "password": "myPassword!1"
             },
             "components": [
-                "hana_studio_windows",
-                "hana_client_windows"
+                "hana_studio_windows"
             ]
         }
       ],
