@@ -2,7 +2,7 @@
 az_region = "westeurope"
 
 # Name of resource group to deploy (example: "demo1")
-az_resource_group = "bdl-singleHANA3"
+az_resource_group = "bdl-singleHANA"
 
 # Unique domain name for easy VM access (example: "hana-on-azure1")
 az_domain_name = "bdl-hana3"
@@ -91,9 +91,12 @@ allow_ips = ["0.0.0.0/0"]
 # Vnet Address space
 vnet_address_space = "10.95.0.0/21"
 
-
 # HDB Subnet Address space
 hdb_subnet_address_space = "10.95.0.0/24"
 
 # The desired private IP address of this HANA database.
 private_ip_address_hdb = "10.95.0.6"
+
+# The desired private IP address of this bastion host.  If it isn't specified, a dynamic IP will be allocated.
+private_ip_address_windows_bastion = "10.95.0.4"
+private_ip_address_linux_bastion   = "10.95.0.5"
