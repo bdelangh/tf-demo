@@ -1,0 +1,32 @@
+---
+
+- hosts: localhost
+  become: true
+  become_user: root
+  pre_tasks:
+    - debug :
+        msg: "Inventory_dir= {{inventory_dir}}"
+    - name: Include output JSON
+      include_vars:
+        file: "{{ inventory_dir }}/output.json"
+        name: output
+
+    - name: Create dictionary with HANA database information from output.JSON
+      set_fact:
+        hana_database: "{{ item }}"
+      loop: "{{ output.databases|flatten(levels=1) }}"
+      when: item.platform == 'HANA'
+  post_tasks:
+    - debug: 
+        msg: "Task Completed ...
+              HANADATABASE = {{hana_database}} "
+
+# Inventory validation for HANA VMs
+- hosts: hanadbnodes
+  become: true
+  become_user: root
+  roles:
+    - role: inventory-validation
+      when:
+        - hana_database.size != "LargeInstance"
+

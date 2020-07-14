@@ -45,6 +45,7 @@ The following options can be customized in the single-node scenario:
 
     ```sh
     cd sap-hana/deploy/vm/modules/single_node_hana/
+	```
 
 4. Create a `terraform.tfvars` file for your deployment. You can use the provided [Boilerplate template ](terraform.tfvars.template) for single-node scenarios as a starting point and adjust the variables according to your requirements.
 
